@@ -1,0 +1,17 @@
+{% extends "bace.html" %}
+{% block content %}
+    <h1>
+        ユーザー登録
+    </h1>
+    <form method="POST">
+        <label for="user_name">ユーザー名</label>
+        <input type="text" name="username">
+        <label for="password">パスワード</label>
+        <input type="password" name="password">
+        <input type="submit" value="新規登録">
+  
+    </form><br>
+
+    <a href="/" role="button">トップに戻る</a>
+
+{% endblock %}

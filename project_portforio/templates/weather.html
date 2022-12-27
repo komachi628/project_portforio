@@ -1,0 +1,16 @@
+{% extends "bace.html" %}
+{% block content %}
+    <h1>
+        今日の日本各地の天気
+    </h1>
+    {% for jsondata in jsondatas %}
+    <article>
+        <p>###################</p>
+        <h2>場所:{{ jsondata['name'] }}</h2><br>
+        <p>気温:{{ jsondata['main']['temp'] }}℃</p>
+        <p>天気:{{ jsondata['weather'][0]['description'] }}</p>
+        <p>###################</p>
+    </article>
+    {% endfor %}
+    <a href="/main" role="button">マイページに戻る</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "bace.html" %}
+{% block content %}
+    <h1>
+        コメント追加
+    </h1>
+    <h3>コメントを入力してください</h3>
+    <form method="POST">
+        <label for="comment">コメント内容</label>
+        <input type="text" name="comment" >
+        <input type="submit" value="コメント追加">
+  
+    </form>
+{% endblock %}

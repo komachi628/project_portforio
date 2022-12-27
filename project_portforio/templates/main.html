@@ -1,0 +1,32 @@
+{% extends "bace.html" %}
+{% block content %}
+    <h1>
+        ポートフォリオ　メインページ
+    </h1>
+
+    <a href="/weather" role="button">
+        今日の天気と気温
+    </a><br>
+    <br>
+
+    <a href="/create" role="button">新規作成画面</a>
+    {% for post in posts %}
+    <article>
+        <h2>{{post.title}}</h2>
+        <p>作成日時:{{ post.created_at }}</p>
+        <p>{{ post.body }}</p>
+        <a href="/{{post.id}}/update" role="button">編集</a>
+        <a href="/{{post.id}}/delete" role="button">削除</a>
+        {% if comment.comment %}
+        <p>コメント:{{ comment.comment }}<br></p>
+        {% else %}
+        <p>コメントなし</p>
+        {% endif %}
+
+        <a href="/{{post.id}}/comment" role="button">コメント追加</a>
+    </article>
+    {% endfor %}
+
+
+    <a href="/logout" role="button">ログアウト</a>
+{% endblock %}
